@@ -10,18 +10,18 @@
 
 int main()
 {
-	int fd, count;
+    int fd, count;
     pid_t k;
     int status;
-	// FIFO file path
-	char *myfifo = "server_queue";
+    // FIFO file path
+    char *myfifo = "server_queue";
     char *buf[10], *pch;
-	char arr1[80];
+    char arr1[80];
 
-	mkfifo(myfifo, 0666);
+    mkfifo(myfifo, 0666);
 
-	while (1)
-	{
+    while (1)
+    {
 	    //set initial values
 	    count = 0;
 	    memset(buf, '\0', sizeof(char*) * 10);
@@ -45,7 +45,7 @@ int main()
         if(k==0){
             if(execvp(buf[0],buf) == -1)exit(1);
         }
-	}
+    }
 	unlink(myfifo);
 	return 0;
 }

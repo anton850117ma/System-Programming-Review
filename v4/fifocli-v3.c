@@ -28,7 +28,7 @@ void retxreq(int sig){
     else{
         //if forth try also fails, terminate
         printf("I give up!\n");
-	    unlink(myfifo1);
+        unlink(myfifo1);
         exit(sig);
     }
 }
