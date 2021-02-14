@@ -24,10 +24,11 @@ void retxreq(int sig){
         fd1 = open(myfifo,O_WRONLY);
         write(fd1, str2, strlen(str2));
         close(fd1);
-    }else{
+    }
+    else{
         //if forth try also fails, terminate
         printf("I give up!\n");
-	unlink(myfifo1);
+	    unlink(myfifo1);
         exit(sig);
     }
 }
