@@ -35,7 +35,7 @@ void retxreq(int sig){
 
 int main(){
 
-	//FIFO file path
+    //FIFO file path
     mkfifo(myfifo1, 0777);
     signal(SIGALRM, retxreq);
 
