@@ -22,14 +22,14 @@ int main()
 
     while (1)
     {
-	    //set initial values
-	    count = 0;
-	    memset(buf, '\0', sizeof(char*) * 10);
-	    memset(arr1, '\0', sizeof(char) * 80);
+        //set initial values
+        count = 0;
+        memset(buf, '\0', sizeof(char*) * 10); 
+        memset(arr1, '\0', sizeof(char) * 80);
 
-	    //open FIFO to read and close it
+        //open FIFO to read and close it
         fd = open(myfifo, O_RDONLY);
-		read(fd, arr1, sizeof(arr1));
+        read(fd, arr1, sizeof(arr1));
         close(fd);
 
         //parse commands
