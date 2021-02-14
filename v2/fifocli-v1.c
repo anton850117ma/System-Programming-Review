@@ -9,13 +9,13 @@
 
 int main()
 {
-	int fd1;
+    int fd1;
 
-	// FIFO file path
-	char* myfifo = "server_queue";
+    // FIFO file path
+    char* myfifo = "server_queue";
 
 
-	char str2[80];
+    char str2[80];
 
     //open FIFO to write
     fd1 = open(myfifo,O_WRONLY);
@@ -25,6 +25,6 @@ int main()
     write(fd1, str2, strlen(str2));
     close(fd1);
 
-	return 0;
+    return 0;
 }
 
