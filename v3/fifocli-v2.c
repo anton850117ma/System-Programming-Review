@@ -14,13 +14,13 @@ a while loop to make sure read() will reach EOF.
 
 int main()
 {
-	int fd1, fd2;
-	char str2[80], buf[500];
+    int fd1, fd2;
+    char str2[80], buf[500];
 
 
-	// FIFO file path
-	char *myfifo = "server_queue";
-	char *myfifo1 = "client_queue";
+    // FIFO file path
+    char *myfifo = "server_queue";
+    char *myfifo1 = "client_queue";
     mkfifo(myfifo1, 0777);
 
     //open FIFO to write
@@ -42,5 +42,5 @@ int main()
 
     unlink(myfifo1);
 
-	return 0;
+    return 0;
 }

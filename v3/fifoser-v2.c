@@ -10,16 +10,16 @@
 
 int main()
 {
-	int fd, fd1, count;
+    int fd, fd1, count;
     pid_t k;
     int status;
-	// FIFO file path
-	char *myfifo = "server_queue";
-	char *myfifo1 = "client_queue";
+    // FIFO file path
+    char *myfifo = "server_queue";
+    char *myfifo1 = "client_queue";
     char *buf[10], *pch;
-	char arr1[80];
+    char arr1[80];
 
-	mkfifo(myfifo, 0666);
+    mkfifo(myfifo, 0666);
 
 	while (1)
 	{
@@ -30,7 +30,7 @@ int main()
 
 	    //open FIFO to read and close it
         fd = open(myfifo, O_RDONLY);
-		read(fd, arr1, sizeof(arr1));
+        read(fd, arr1, sizeof(arr1));
         close(fd);
 
         //parse commands
@@ -51,7 +51,7 @@ int main()
             if(execvp(buf[0],buf) == -1)exit(1);
         }
 	}
-	unlink(myfifo);
-	return 0;
+    unlink(myfifo);
+    return 0;
 }
 
